@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - AstroChat</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .contact-hero {
@@ -13,21 +16,25 @@
             text-align: center;
             color: white;
         }
+
         .contact-hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 700;
         }
+
         .contact-hero p {
             font-size: 1.2rem;
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
         }
+
         .contact-content {
             padding: 80px 0;
             background: #f8fafc;
         }
+
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -36,17 +43,20 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+
         .contact-info {
             background: white;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
         .contact-info h2 {
             font-size: 2rem;
             margin-bottom: 30px;
             color: #333;
         }
+
         .contact-item {
             display: flex;
             align-items: center;
@@ -56,9 +66,11 @@
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
+
         .contact-item:hover {
             transform: translateY(-2px);
         }
+
         .contact-icon {
             width: 50px;
             height: 50px;
@@ -71,35 +83,42 @@
             color: white;
             font-size: 1.2rem;
         }
+
         .contact-details h3 {
             margin: 0 0 5px 0;
             color: #333;
             font-size: 1.1rem;
         }
+
         .contact-details p {
             margin: 0;
             color: #666;
         }
+
         .contact-form {
             background: white;
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
+
         .contact-form h2 {
             font-size: 2rem;
             margin-bottom: 30px;
             color: #333;
         }
+
         .form-group {
             margin-bottom: 25px;
         }
+
         .form-group label {
             display: block;
             margin-bottom: 8px;
             color: #333;
             font-weight: 500;
         }
+
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -111,16 +130,19 @@
             transition: border-color 0.3s ease;
             box-sizing: border-box;
         }
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #667eea;
         }
+
         .form-group textarea {
             resize: vertical;
             min-height: 120px;
         }
+
         .submit-btn {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -133,19 +155,23 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             width: 100%;
         }
+
         .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
+
         .faq-section {
             padding: 80px 0;
             background: white;
         }
+
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
             padding: 0 20px;
         }
+
         .faq-section h2 {
             text-align: center;
             font-size: 2.5rem;
@@ -155,12 +181,14 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .faq-item {
             margin-bottom: 20px;
             border: 1px solid #e2e8f0;
             border-radius: 10px;
             overflow: hidden;
         }
+
         .faq-question {
             background: #f8fafc;
             padding: 20px;
@@ -169,9 +197,11 @@
             color: #333;
             transition: background-color 0.3s ease;
         }
+
         .faq-question:hover {
             background: #e2e8f0;
         }
+
         .faq-answer {
             padding: 20px;
             color: #666;
@@ -184,32 +214,39 @@
             border-radius: 10px;
             margin: 20px 0;
         }
+
         .business-hours h4 {
             margin: 0 0 15px 0;
             color: #333;
         }
+
         .hours-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
         .hours-list li {
             display: flex;
             justify-content: space-between;
             padding: 5px 0;
             border-bottom: 1px solid #e0f2fe;
         }
+
         .hours-list li:last-child {
             border-bottom: none;
         }
+
         @media (max-width: 768px) {
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+
             .contact-hero h1 {
                 font-size: 2rem;
             }
+
             .contact-info,
             .contact-form {
                 padding: 30px 20px;
@@ -217,12 +254,15 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html"><h2>AstroChat</h2></a>
+                <a href="index.html">
+                    <h2>AstroChat</h2>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -256,7 +296,8 @@
     <section class="contact-hero">
         <div class="container">
             <h1>Get in Touch</h1>
-            <p>We're here to help you on your cosmic journey. Reach out to us with any questions, feedback, or support needs.</p>
+            <p>We're here to help you on your cosmic journey. Reach out to us with any questions, feedback, or support
+                needs.</p>
         </div>
     </section>
 
@@ -266,7 +307,7 @@
             <!-- Contact Information -->
             <div class="contact-info">
                 <h2>Contact Information</h2>
-                
+
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
                     <div class="contact-details">
@@ -301,7 +342,8 @@
                         <li><span>Saturday</span><span>Closed</span></li>
                         <li><span>Sunday</span><span>Closed</span></li>
                     </ul>
-                    <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Times are in Singapore Standard Time (SGT)</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">Times are in Singapore Standard Time
+                        (SGT)</p>
                 </div>
             </div>
 
@@ -348,7 +390,8 @@
 
                     <div class="form-group">
                         <label for="message">Message *</label>
-                        <textarea id="message" name="message" placeholder="Please describe your question or issue in detail..." required></textarea>
+                        <textarea id="message" name="message"
+                            placeholder="Please describe your question or issue in detail..." required></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">Send Message</button>
@@ -361,62 +404,80 @@
     <section class="faq-section">
         <div class="faq-container">
             <h2>Frequently Asked Questions</h2>
-            
+
             <div class="faq-item">
                 <div class="faq-question">How do I create my birth chart?</div>
-                <div class="faq-answer">To create your birth chart, you'll need to provide your birth date, time, and location. Go to the "Chart" section in the app and enter this information. Our AI will generate a detailed astrological chart with personalized interpretations.</div>
+                <div class="faq-answer">To create your birth chart, you'll need to provide your birth date, time, and
+                    location. Go to the "Chart" section in the app and enter this information. Our AI will generate a
+                    detailed astrological chart with personalized interpretations.</div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">Is my personal data secure?</div>
-                <div class="faq-answer">Yes, we take your privacy seriously. All personal data is encrypted and stored securely. We never share your personal information with third parties without your consent. Please read our Privacy Policy for detailed information about data protection.</div>
+                <div class="faq-answer">Yes, we take your privacy seriously. All personal data is encrypted and stored
+                    securely. We never share your personal information with third parties without your consent. Please
+                    read our Privacy Policy for detailed information about data protection.</div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">How accurate are the AI astrological readings?</div>
-                <div class="faq-answer">Our AI is trained on extensive astrological knowledge and provides insights based on traditional astrological principles. However, please remember that astrology is for entertainment and guidance purposes only, and should not replace professional advice for important life decisions.</div>
+                <div class="faq-answer">Our AI is trained on extensive astrological knowledge and provides insights
+                    based on traditional astrological principles. However, please remember that astrology is for
+                    entertainment and guidance purposes only, and should not replace professional advice for important
+                    life decisions.</div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">Can I cancel my subscription anytime?</div>
-                <div class="faq-answer">Yes, you can cancel your subscription at any time through your device's app store settings (iOS App Store or Google Play Store). The cancellation will take effect at the end of your current billing period.</div>
+                <div class="faq-answer">Yes, you can cancel your subscription at any time through your device's app
+                    store settings (iOS App Store or Google Play Store). The cancellation will take effect at the end of
+                    your current billing period.</div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">Do you offer refunds?</div>
-                <div class="faq-answer">Refund policies are governed by the app store where you made your purchase (Apple App Store or Google Play Store). Please contact the respective app store for refund requests, or reach out to us if you need assistance with the process.</div>
+                <div class="faq-answer">Refund policies are governed by the app store where you made your purchase
+                    (Apple App Store or Google Play Store). Please contact the respective app store for refund requests,
+                    or reach out to us if you need assistance with the process.</div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">How do I update my birth information?</div>
-                <div class="faq-answer">You can update your birth information in the app settings under "Profile" or "Birth Data." Keep in mind that changing this information will affect all future readings and chart interpretations.</div>
+                <div class="faq-answer">You can update your birth information in the app settings under "Profile" or
+                    "Birth Data." Keep in mind that changing this information will affect all future readings and chart
+                    interpretations.</div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">Is the app available in multiple languages?</div>
-                <div class="faq-answer">Currently, AstroChat is available in English. We're working on adding more languages in future updates. Stay tuned for announcements about new language support.</div>
+                <div class="faq-answer">Currently, AstroChat is available in English. We're working on adding more
+                    languages in future updates. Stay tuned for announcements about new language support.</div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">How often is the content updated?</div>
-                <div class="faq-answer">We regularly update our astrological content, including daily horoscopes, transit information, and AI responses. Major app updates with new features are released periodically based on user feedback and astrological developments.</div>
+                <div class="faq-answer">We regularly update our astrological content, including daily horoscopes,
+                    transit information, and AI responses. Major app updates with new features are released periodically
+                    based on user feedback and astrological developments.</div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-question">How do I request account & data deletion?</div>
-                <div class="faq-answer">Send the request from the same Google email you use in AstroChat to support@moonviz-ai.com.
-Use the subject: [AstroChat] Account deletion request.
-Copy the email text below, paste into your email, and send. We will complete deletion within 30 days. Some records (e.g., payments/tax) may be retained as required by law.
+                <div class="faq-answer">Send the request from the same Google email you use in AstroChat to
+                    support@moonviz-ai.com.
+                    Use the subject: [AstroChat] Account deletion request.
+                    Copy the email text below, paste into your email, and send. We will complete deletion within 30
+                    days. Some records (e.g., payments/tax) may be retained as required by law.
 
-Email text (copy & send):
-Hello AstroChat Support,
+                    Email text (copy & send):
+                    Hello AstroChat Support,
 
-Please delete my AstroChat account and all associated cloud data.
-I am sending this request from the same Google email I use to sign in.
+                    Please delete my AstroChat account and all associated cloud data.
+                    I am sending this request from the same Google email I use to sign in.
 
-I understand this deletion is permanent, except records retained as required by law.
+                    I understand this deletion is permanent, except records retained as required by law.
 
-Thank you.</div>
+                    Thank you.</div>
             </div>
         </div>
     </section>
@@ -461,38 +522,39 @@ Thank you.</div>
     <script src="script.js"></script>
     <script>
         // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Get form data
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
-            
+
             // TODO: Implement actual form submission to backend
             console.log('Form submitted:', data);
-            
+
             // Show success message (placeholder)
             alert('Thank you for your message! We will get back to you within 24 hours.');
-            
+
             // Reset form
             this.reset();
         });
 
         // FAQ accordion functionality
         document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
+            question.addEventListener('click', function () {
                 const answer = this.nextElementSibling;
                 const isOpen = answer.style.display === 'block';
-                
+
                 // Close all other answers
                 document.querySelectorAll('.faq-answer').forEach(ans => {
                     ans.style.display = 'none';
                 });
-                
+
                 // Toggle current answer
                 answer.style.display = isOpen ? 'none' : 'block';
             });
         });
     </script>
 </body>
+
 </html>

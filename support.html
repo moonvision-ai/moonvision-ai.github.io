@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support Center - AstroChat</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .support-hero {
@@ -13,30 +16,36 @@
             text-align: center;
             color: white;
         }
+
         .support-hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 700;
         }
+
         .support-hero p {
             font-size: 1.2rem;
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
         }
+
         .search-section {
             padding: 60px 0;
             background: #f8fafc;
         }
+
         .search-container {
             max-width: 600px;
             margin: 0 auto;
             padding: 0 20px;
         }
+
         .search-box {
             position: relative;
             margin-bottom: 30px;
         }
+
         .search-box input {
             width: 100%;
             padding: 20px 60px 20px 20px;
@@ -46,10 +55,12 @@
             box-sizing: border-box;
             transition: border-color 0.3s ease;
         }
+
         .search-box input:focus {
             outline: none;
             border-color: #667eea;
         }
+
         .search-icon {
             position: absolute;
             right: 20px;
@@ -58,12 +69,14 @@
             color: #667eea;
             font-size: 1.2rem;
         }
+
         .quick-links {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 40px;
         }
+
         .quick-link {
             background: white;
             padding: 25px;
@@ -72,32 +85,38 @@
             text-decoration: none;
             color: #333;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+
         .quick-link:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             text-decoration: none;
             color: #333;
         }
+
         .quick-link-icon {
             font-size: 2.5rem;
             margin-bottom: 15px;
             display: block;
         }
+
         .quick-link h3 {
             margin: 0 0 10px 0;
             font-size: 1.2rem;
         }
+
         .quick-link p {
             margin: 0;
             color: #666;
             font-size: 0.9rem;
         }
+
         .support-content {
             padding: 80px 0;
             background: white;
         }
+
         .support-grid {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -106,6 +125,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
+
         .support-sidebar {
             background: #f8fafc;
             padding: 30px;
@@ -114,18 +134,22 @@
             position: sticky;
             top: 100px;
         }
+
         .support-sidebar h3 {
             margin: 0 0 20px 0;
             color: #333;
         }
+
         .sidebar-menu {
             list-style: none;
             padding: 0;
             margin: 0;
         }
+
         .sidebar-menu li {
             margin-bottom: 10px;
         }
+
         .sidebar-menu a {
             display: block;
             padding: 12px 15px;
@@ -134,61 +158,74 @@
             border-radius: 8px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         .sidebar-menu a:hover,
         .sidebar-menu a.active {
             background: #667eea;
             color: white;
             text-decoration: none;
         }
+
         .support-main {
             background: white;
         }
+
         .support-section {
             display: none;
             animation: fadeIn 0.5s ease;
         }
+
         .support-section.active {
             display: block;
         }
+
         .support-section h2 {
             font-size: 2rem;
             margin-bottom: 30px;
             color: #333;
         }
+
         .help-article {
             margin-bottom: 40px;
             padding: 30px;
             background: #f8fafc;
             border-radius: 15px;
         }
+
         .help-article h3 {
             margin: 0 0 15px 0;
             color: #333;
             font-size: 1.3rem;
         }
+
         .help-article p {
             color: #666;
             line-height: 1.6;
             margin-bottom: 15px;
         }
+
         .help-article ol,
         .help-article ul {
             color: #666;
             line-height: 1.6;
             padding-left: 20px;
         }
+
         .help-article li {
             margin-bottom: 8px;
         }
+
         .step-list {
             counter-reset: step-counter;
         }
+
         .step-list li {
             counter-increment: step-counter;
             position: relative;
             padding-left: 40px;
             margin-bottom: 20px;
         }
+
         .step-list li::before {
             content: counter(step-counter);
             position: absolute;
@@ -205,6 +242,7 @@
             font-size: 0.8rem;
             font-weight: bold;
         }
+
         .troubleshooting-item {
             background: white;
             border: 1px solid #e2e8f0;
@@ -212,6 +250,7 @@
             margin-bottom: 20px;
             overflow: hidden;
         }
+
         .troubleshooting-header {
             background: #f8fafc;
             padding: 20px;
@@ -223,15 +262,18 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .troubleshooting-header:hover {
             background: #e2e8f0;
         }
+
         .troubleshooting-content {
             padding: 20px;
             display: none;
             color: #666;
             line-height: 1.6;
         }
+
         .contact-support {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -240,14 +282,17 @@
             text-align: center;
             margin-top: 60px;
         }
+
         .contact-support h3 {
             margin: 0 0 15px 0;
             font-size: 1.5rem;
         }
+
         .contact-support p {
             margin: 0 0 25px 0;
             opacity: 0.9;
         }
+
         .contact-btn {
             background: white;
             color: #667eea;
@@ -259,6 +304,7 @@
             display: inline-block;
             transition: transform 0.3s ease;
         }
+
         .contact-btn:hover {
             transform: translateY(-2px);
             text-decoration: none;
@@ -266,32 +312,46 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         @media (max-width: 768px) {
             .support-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+
             .support-sidebar {
                 position: static;
             }
+
             .support-hero h1 {
                 font-size: 2rem;
             }
+
             .quick-links {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html"><h2>AstroChat</h2></a>
+                <a href="index.html">
+                    <h2>AstroChat</h2>
+                </a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -336,7 +396,7 @@
                 <input type="text" id="supportSearch" placeholder="Search for help articles, guides, and FAQs...">
                 <span class="search-icon">🔍</span>
             </div>
-            
+
             <div class="quick-links">
                 <a href="#getting-started" class="quick-link" data-section="getting-started">
                     <span class="quick-link-icon">🚀</span>
@@ -369,12 +429,18 @@
             <div class="support-sidebar">
                 <h3>Help Topics</h3>
                 <ul class="sidebar-menu">
-                    <li><a href="#getting-started" class="sidebar-link active" data-section="getting-started">Getting Started</a></li>
-                    <li><a href="#account-billing" class="sidebar-link" data-section="account-billing">Account & Billing</a></li>
-                    <li><a href="#features-guide" class="sidebar-link" data-section="features-guide">Features Guide</a></li>
-                    <li><a href="#troubleshooting" class="sidebar-link" data-section="troubleshooting">Troubleshooting</a></li>
-                    <li><a href="#privacy-security" class="sidebar-link" data-section="privacy-security">Privacy & Security</a></li>
-                    <li><a href="#technical-requirements" class="sidebar-link" data-section="technical-requirements">Technical Requirements</a></li>
+                    <li><a href="#getting-started" class="sidebar-link active" data-section="getting-started">Getting
+                            Started</a></li>
+                    <li><a href="#account-billing" class="sidebar-link" data-section="account-billing">Account &
+                            Billing</a></li>
+                    <li><a href="#features-guide" class="sidebar-link" data-section="features-guide">Features Guide</a>
+                    </li>
+                    <li><a href="#troubleshooting" class="sidebar-link"
+                            data-section="troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#privacy-security" class="sidebar-link" data-section="privacy-security">Privacy &
+                            Security</a></li>
+                    <li><a href="#technical-requirements" class="sidebar-link"
+                            data-section="technical-requirements">Technical Requirements</a></li>
                 </ul>
             </div>
 
@@ -383,10 +449,11 @@
                 <!-- Getting Started Section -->
                 <div id="getting-started" class="support-section active">
                     <h2>Getting Started with AstroChat</h2>
-                    
+
                     <div class="help-article">
                         <h3>Creating Your First Birth Chart</h3>
-                        <p>Your birth chart is the foundation of your astrological journey. Here's how to create one:</p>
+                        <p>Your birth chart is the foundation of your astrological journey. Here's how to create one:
+                        </p>
                         <ol class="step-list">
                             <li>Download and open the AstroChat app</li>
                             <li>Tap "Create Profile" or "Get Started"</li>
@@ -395,7 +462,9 @@
                             <li>Enter your birth location (city, state/province, country)</li>
                             <li>Tap "Generate Chart" to create your personalized birth chart</li>
                         </ol>
-                        <p><strong>Tip:</strong> The more accurate your birth time, the more precise your chart will be. If you don't know your exact birth time, you can still create a chart, but some features may be limited.</p>
+                        <p><strong>Tip:</strong> The more accurate your birth time, the more precise your chart will be.
+                            If you don't know your exact birth time, you can still create a chart, but some features may
+                            be limited.</p>
                     </div>
 
                     <div class="help-article">
@@ -431,11 +500,11 @@
                 <!-- Account & Billing Section -->
                 <div id="account-billing" class="support-section">
                     <h2>Account & Billing</h2>
-                    
+
                     <div class="help-article">
                         <h3>Managing Your Subscription</h3>
                         <p>AstroChat offers both free and premium features. Here's how to manage your subscription:</p>
-                        
+
                         <h4>Upgrading to Premium:</h4>
                         <ol class="step-list">
                             <li>Open the AstroChat app</li>
@@ -449,7 +518,8 @@
                         <p>Subscriptions are managed through your device's app store:</p>
                         <ul>
                             <li><strong>iOS:</strong> Settings > Apple ID > Subscriptions > AstroChat > Cancel</li>
-                            <li><strong>Android:</strong> Google Play Store > Menu > Subscriptions > AstroChat > Cancel</li>
+                            <li><strong>Android:</strong> Google Play Store > Menu > Subscriptions > AstroChat > Cancel
+                            </li>
                         </ul>
                     </div>
 
@@ -462,7 +532,8 @@
                             <li>Update your birth date, time, or location as needed</li>
                             <li>Save your changes</li>
                         </ol>
-                        <p><strong>Note:</strong> Changing your birth information will affect all future readings and may require regenerating your chart.</p>
+                        <p><strong>Note:</strong> Changing your birth information will affect all future readings and
+                            may require regenerating your chart.</p>
                     </div>
 
                     <div class="help-article">
@@ -474,23 +545,29 @@
                             <li>Contact your app store's customer support for payment-related issues</li>
                             <li>If the problem persists, contact our support team with your order details</li>
                         </ul>
-                        <p><strong>For billing support:</strong> Contact us at moonvisionhq@gmail.com or call (+65)88021935 during business hours (Mon-Fri 9:00-18:00 SGT)</p>
+                        <p><strong>For billing support:</strong> Contact us at moonvisionhq@gmail.com or call
+                            (+65)88021935 during business hours (Mon-Fri 9:00-18:00 SGT)</p>
                     </div>
                 </div>
 
                 <!-- Features Guide Section -->
                 <div id="features-guide" class="support-section">
                     <h2>Features Guide</h2>
-                    
+
                     <div class="help-article">
                         <h3>AI Astrological Conversations</h3>
                         <p>Our AI astrologer provides personalized insights based on your birth chart:</p>
                         <ul>
-                            <li><strong>Personality Analysis:</strong> Understand your strengths, challenges, and potential</li>
-                            <li><strong>Relationship Guidance:</strong> Get insights about compatibility and relationship dynamics</li>
-                            <li><strong>Career Advice:</strong> Discover your professional strengths and ideal career paths</li>
-                            <li><strong>Timing Guidance:</strong> Learn about favorable times for important decisions</li>
-                            <li><strong>Emotional Support:</strong> Receive compassionate guidance during difficult times</li>
+                            <li><strong>Personality Analysis:</strong> Understand your strengths, challenges, and
+                                potential</li>
+                            <li><strong>Relationship Guidance:</strong> Get insights about compatibility and
+                                relationship dynamics</li>
+                            <li><strong>Career Advice:</strong> Discover your professional strengths and ideal career
+                                paths</li>
+                            <li><strong>Timing Guidance:</strong> Learn about favorable times for important decisions
+                            </li>
+                            <li><strong>Emotional Support:</strong> Receive compassionate guidance during difficult
+                                times</li>
                         </ul>
                     </div>
 
@@ -500,10 +577,12 @@
                         <ul>
                             <li><strong>Natal Chart Report:</strong> Complete analysis of your birth chart</li>
                             <li><strong>Transit Report:</strong> How current planetary movements affect you</li>
-                            <li><strong>Compatibility Report:</strong> Detailed relationship analysis with another person</li>
+                            <li><strong>Compatibility Report:</strong> Detailed relationship analysis with another
+                                person</li>
                             <li><strong>Solar Return:</strong> Your personal new year forecast</li>
                         </ul>
-                        <p>To generate a report, go to the "Reports" section and select the type of analysis you want.</p>
+                        <p>To generate a report, go to the "Reports" section and select the type of analysis you want.
+                        </p>
                     </div>
 
                     <div class="help-article">
@@ -532,7 +611,7 @@
                 <!-- Troubleshooting Section -->
                 <div id="troubleshooting" class="support-section">
                     <h2>Troubleshooting</h2>
-                    
+
                     <div class="troubleshooting-item">
                         <div class="troubleshooting-header">
                             <span>App won't load or crashes frequently</span>
@@ -622,7 +701,7 @@
                 <!-- Privacy & Security Section -->
                 <div id="privacy-security" class="support-section">
                     <h2>Privacy & Security</h2>
-                    
+
                     <div class="help-article">
                         <h3>Data Protection and Privacy</h3>
                         <p>We take your privacy seriously and implement strong security measures:</p>
@@ -654,7 +733,8 @@
                             <li>To delete specific data: Go to Settings > Privacy > Data Management</li>
                             <li>To close your account: Contact our support team with your request</li>
                             <li>We will process deletion requests within 30 days</li>
-                            <li>Some data may be retained for legal or security purposes as outlined in our Privacy Policy</li>
+                            <li>Some data may be retained for legal or security purposes as outlined in our Privacy
+                                Policy</li>
                         </ol>
                     </div>
                 </div>
@@ -662,11 +742,11 @@
                 <!-- Technical Requirements Section -->
                 <div id="technical-requirements" class="support-section">
                     <h2>Technical Requirements</h2>
-                    
+
                     <div class="help-article">
                         <h3>System Requirements</h3>
                         <p>Ensure your device meets these minimum requirements for optimal performance:</p>
-                        
+
                         <h4>iOS Requirements:</h4>
                         <ul>
                             <li>iOS 13.0 or later</li>
@@ -689,7 +769,8 @@
                         <h3>Internet Connection</h3>
                         <p>AstroChat requires an internet connection for most features:</p>
                         <ul>
-                            <li><strong>Required for:</strong> AI conversations, chart generation, horoscopes, updates</li>
+                            <li><strong>Required for:</strong> AI conversations, chart generation, horoscopes, updates
+                            </li>
                             <li><strong>Offline access:</strong> Previously generated charts and saved reports</li>
                             <li><strong>Recommended:</strong> Wi-Fi or strong cellular data connection</li>
                             <li><strong>Data usage:</strong> Approximately 5-10MB per session</li>
@@ -710,7 +791,8 @@
                 <!-- Contact Support -->
                 <div class="contact-support">
                     <h3>Still Need Help?</h3>
-                    <p>Can't find what you're looking for? Our support team is here to help you with any questions or issues.</p>
+                    <p>Can't find what you're looking for? Our support team is here to help you with any questions or
+                        issues.</p>
                     <a href="contact.html" class="contact-btn">Contact Support</a>
                 </div>
             </div>
@@ -757,7 +839,7 @@
     <script src="script.js"></script>
     <script>
         // Support page functionality
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Sidebar navigation
             const sidebarLinks = document.querySelectorAll('.sidebar-link');
             const quickLinks = document.querySelectorAll('.quick-link');
@@ -768,18 +850,18 @@
                 sections.forEach(section => {
                     section.classList.remove('active');
                 });
-                
+
                 // Show target section
                 const targetSection = document.getElementById(sectionId);
                 if (targetSection) {
                     targetSection.classList.add('active');
                 }
-                
+
                 // Update active sidebar link
                 sidebarLinks.forEach(link => {
                     link.classList.remove('active');
                 });
-                
+
                 const activeLink = document.querySelector(`[data-section="${sectionId}"]`);
                 if (activeLink && activeLink.classList.contains('sidebar-link')) {
                     activeLink.classList.add('active');
@@ -788,7 +870,7 @@
 
             // Sidebar link clicks
             sidebarLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     e.preventDefault();
                     const sectionId = this.getAttribute('data-section');
                     showSection(sectionId);
@@ -797,11 +879,11 @@
 
             // Quick link clicks
             quickLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     e.preventDefault();
                     const sectionId = this.getAttribute('data-section');
                     showSection(sectionId);
-                    
+
                     // Scroll to content area
                     document.querySelector('.support-content').scrollIntoView({
                         behavior: 'smooth'
@@ -812,20 +894,20 @@
             // Troubleshooting accordion
             const troubleshootingHeaders = document.querySelectorAll('.troubleshooting-header');
             troubleshootingHeaders.forEach(header => {
-                header.addEventListener('click', function() {
+                header.addEventListener('click', function () {
                     const content = this.nextElementSibling;
                     const isOpen = content.style.display === 'block';
-                    
+
                     // Close all other items
                     document.querySelectorAll('.troubleshooting-content').forEach(item => {
                         item.style.display = 'none';
                     });
-                    
+
                     // Update all icons
                     document.querySelectorAll('.troubleshooting-header span:last-child').forEach(icon => {
                         icon.textContent = '+';
                     });
-                    
+
                     // Toggle current item
                     if (!isOpen) {
                         content.style.display = 'block';
@@ -836,7 +918,7 @@
 
             // Search functionality
             const searchInput = document.getElementById('supportSearch');
-            searchInput.addEventListener('input', function() {
+            searchInput.addEventListener('input', function () {
                 const searchTerm = this.value.toLowerCase();
                 // TODO: Implement search functionality
                 console.log('Searching for:', searchTerm);
@@ -844,4 +926,5 @@
         });
     </script>
 </body>
+
 </html>
