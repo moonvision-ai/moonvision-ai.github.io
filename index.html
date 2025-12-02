@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AstroChat - AI Astrology Companion</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -82,7 +83,32 @@
                     <!-- Central Chat Bubble -->
                     <div class="hero-chat-center">
                         <div class="chat-message">
-                            <span class="sparkle">✨</span>
+                            <span class="sparkle">
+                                <svg class="anim-sparkle" viewBox="0 0 64 64" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <radialGradient id="grad-sparkle-core" cx="32" cy="32" r="20"
+                                            gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#FFE000" stop-opacity="1" />
+                                            <stop offset="0.6" stop-color="#FFA500" stop-opacity="0.6" />
+                                            <stop offset="1" stop-color="#FFA500" stop-opacity="0" />
+                                        </radialGradient>
+                                        <filter id="glow-strong" x="-50%" y="-50%" width="200%" height="200%">
+                                            <feGaussianBlur stdDeviation="3" result="blur" />
+                                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                        </filter>
+                                    </defs>
+                                    <g class="sparkle-shimmer">
+                                        <path d="M32 0L34 28L64 32L34 36L32 64L30 36L0 32L30 28L32 0Z" fill="#FFD700"
+                                            filter="url(#glow-strong)" />
+                                    </g>
+                                    <g class="sparkle-core">
+                                        <circle cx="32" cy="32" r="8" fill="url(#grad-sparkle-core)" />
+                                        <path d="M32 8L36 26L56 32L36 38L32 56L28 38L8 32L28 26L32 8Z" fill="#FFF"
+                                            fill-opacity="0.8" />
+                                    </g>
+                                </svg>
+                            </span>
                             <p>How's my love life this week?</p>
                         </div>
                         <div class="chat-response">
@@ -134,37 +160,211 @@
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
+                    <div class="feature-icon">
+                        <svg class="anim-robot" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad-robot-body" x1="32" y1="40" x2="32" y2="64"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#2E3A59" />
+                                    <stop offset="1" stop-color="#111927" />
+                                </linearGradient>
+                                <linearGradient id="grad-robot-face" x1="32" y1="18" x2="32" y2="46"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#00C6FF" />
+                                    <stop offset="1" stop-color="#0072FF" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Body -->
+                            <path class="robot-body" d="M16 48C16 48 20 44 32 44C44 44 48 48 48 48V64H16V48Z"
+                                fill="url(#grad-robot-body)" />
+                            <!-- Head Group -->
+                            <g class="robot-head">
+                                <path class="robot-antenna" d="M32 18V10M28 6L32 10L36 6" stroke="#888" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <circle class="robot-antenna-ball" cx="32" cy="6" r="2.5" fill="#FF5E62" />
+                                <rect x="14" y="18" width="36" height="28" rx="8" fill="#E0E0E0" />
+                                <rect x="16" y="20" width="32" height="24" rx="6" fill="url(#grad-robot-face)" />
+                                <!-- Eyes -->
+                                <g class="robot-eyes">
+                                    <rect x="20" y="26" width="8" height="6" rx="2" fill="#FFF" />
+                                    <rect x="36" y="26" width="8" height="6" rx="2" fill="#FFF" />
+                                </g>
+                                <!-- Mouth -->
+                                <path d="M26 38Q32 41 38 38" stroke="#FFF" stroke-width="2" stroke-linecap="round"
+                                    opacity="0.8" />
+                            </g>
+                        </svg>
+                    </div>
                     <h3>AI Astrologer</h3>
                     <p>Start a session anytime. Ask questions about your career, love life, or personal growth and get
                         instant, personalized cosmic guidance.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">✨</div>
+                    <div class="feature-icon">
+                        <svg class="anim-focus-star" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="grad-focus-core" cx="32" cy="32" r="16"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#E0AAFF" />
+                                    <stop offset="1" stop-color="#9D4EDD" />
+                                </radialGradient>
+                                <filter id="glow-focus" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="4" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+                            <g class="star-rays">
+                                <path d="M32 0L34 24L64 32L34 40L32 64L30 40L0 32L30 24L32 0Z" fill="#C77DFF"
+                                    opacity="0.4" />
+                            </g>
+                            <circle class="star-ring" cx="32" cy="32" r="22" stroke="#E0AAFF" stroke-width="1.5"
+                                stroke-dasharray="4 6" opacity="0.6" />
+                            <path class="star-main" d="M32 8L37 27L56 32L37 37L32 56L27 37L8 32L27 27L32 8Z"
+                                fill="url(#grad-focus-core)" filter="url(#glow-focus)" />
+                            <path class="star-center" d="M32 16L34 30L48 32L34 34L32 48L30 34L16 32L30 30L32 16Z"
+                                fill="#FFF" />
+                        </svg>
+                    </div>
                     <h3>Daily Focus</h3>
                     <p>Get your daily "Today's Focus" based on your unique chart. Know when to act, when to reflect, and
                         what energies to embrace.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🌊</div>
+                    <div class="feature-icon">
+                        <svg class="anim-wave" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="grad-wave-1" x1="0" y1="0" x2="64" y2="64"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#4FACFE" />
+                                    <stop offset="1" stop-color="#00F2FE" />
+                                </linearGradient>
+                                <linearGradient id="grad-wave-2" x1="64" y1="0" x2="0" y2="64"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#00C6FF" />
+                                    <stop offset="1" stop-color="#0072FF" />
+                                </linearGradient>
+                            </defs>
+                            <path class="wave-back" d="M4 38C14 34 22 46 32 38C42 30 54 42 60 34"
+                                stroke="url(#grad-wave-2)" stroke-width="3" stroke-linecap="round" opacity="0.5" />
+                            <path class="wave-front" d="M4 44C12 36 24 52 32 44C40 36 52 52 60 44"
+                                stroke="url(#grad-wave-1)" stroke-width="4" stroke-linecap="round" />
+                            <path class="wave-top" d="M8 28C16 24 24 32 32 28C40 24 48 32 56 28" stroke="#FFF"
+                                stroke-width="1.5" stroke-linecap="round" stroke-dasharray="2 4" opacity="0.4" />
+                            <g class="wave-particles">
+                                <circle cx="20" cy="54" r="2" fill="#FFF" opacity="0.8" style="animation-delay: 0s" />
+                                <circle cx="44" cy="58" r="2.5" fill="#FFF" opacity="0.6"
+                                    style="animation-delay: 1.5s" />
+                                <circle cx="32" cy="56" r="1.5" fill="#FFF" opacity="0.7"
+                                    style="animation-delay: 0.8s" />
+                            </g>
+                        </svg>
+                    </div>
                     <h3>Elemental Patterns</h3>
                     <p>Discover your dominant elements (Fire, Earth, Air, Water) and understand your core drivers and
                         life areas.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💞</div>
+                    <div class="feature-icon">
+                        <svg class="anim-heart" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="grad-heart-3d" cx="20" cy="20" r="40"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FF9A9E" />
+                                    <stop offset="1" stop-color="#FECFEF" />
+                                </radialGradient>
+                                <filter id="glow-heart-soft" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="2" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+                            <path class="heart-shape"
+                                d="M32 56C32 56 58 40 58 22C58 10 46 4 36 10C34 12 32 14 32 14C32 14 30 12 28 10C18 4 6 10 6 22C6 40 32 56 32 56Z"
+                                fill="url(#grad-heart-3d)" filter="url(#glow-heart-soft)" />
+                            <path class="heart-highlight" d="M16 18C16 14 20 12 24 14" stroke="#FFF" stroke-width="2"
+                                stroke-linecap="round" opacity="0.6" />
+                            <path class="heart-line"
+                                d="M32 62C32 62 62 44 62 18C62 6 46 -2 36 6C34 8 32 10 32 10C32 10 30 8 28 6C18 -2 2 6 2 18C2 44 32 62 32 62Z"
+                                stroke="#FF5E62" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="4 4"
+                                opacity="0.3" />
+                        </svg>
+                    </div>
                     <h3>Compatibility</h3>
                     <p>Deep dive into relationship synastry. Understand the "Why it works (or not)" with detailed
                         compatibility scores and analysis.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔮</div>
+                    <div class="feature-icon">
+                        <svg class="anim-crystal" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="grad-crystal-ball" cx="32" cy="28" r="24"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#E0AAFF" stop-opacity="0.4" />
+                                    <stop offset="0.6" stop-color="#7B2CBF" stop-opacity="0.3" />
+                                    <stop offset="1" stop-color="#240046" stop-opacity="0.6" />
+                                </radialGradient>
+                                <radialGradient id="grad-mist" cx="32" cy="28" r="16" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#C77DFF" stop-opacity="0.6" />
+                                    <stop offset="1" stop-color="#7B2CBF" stop-opacity="0" />
+                                </radialGradient>
+                            </defs>
+                            <!-- Stand -->
+                            <ellipse cx="32" cy="56" rx="16" ry="6" fill="#3C096C" />
+                            <path d="M24 56L26 46H38L40 56" fill="#5A189A" />
+                            <!-- Ball -->
+                            <g class="ball-glass">
+                                <circle cx="32" cy="28" r="22" fill="url(#grad-crystal-ball)" stroke="#9D4EDD"
+                                    stroke-width="0.5" stroke-opacity="0.5" />
+                                <circle class="ball-mist" cx="32" cy="28" r="18" fill="url(#grad-mist)" />
+                                <!-- Stars inside -->
+                                <g class="ball-stars">
+                                    <path d="M28 20L29 22L31 23L29 24L28 26L27 24L25 23L27 22L28 20Z" fill="#FFF" />
+                                    <path d="M36 32L37 34L39 35L37 36L36 38L35 36L33 35L35 34L36 32Z" fill="#FFF" />
+                                    <circle cx="40" cy="20" r="1" fill="#FFF" />
+                                </g>
+                                <!-- Reflection -->
+                                <path d="M20 18C20 18 24 12 32 12C38 12 42 16 42 16" stroke="#FFF" stroke-width="2"
+                                    stroke-linecap="round" opacity="0.3" />
+                            </g>
+                        </svg>
+                    </div>
                     <h3>Full Birth Chart</h3>
                     <p>Explore your complete natal chart with detailed breakdowns of Houses, Aspects, and Placements.
                         Your cosmic blueprint, decoded.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🌌</div>
+                    <div class="feature-icon">
+                        <svg class="anim-galaxy" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="grad-galaxy-core" cx="32" cy="32" r="12"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#FFF" />
+                                    <stop offset="0.4" stop-color="#9D4EDD" />
+                                    <stop offset="1" stop-color="#9D4EDD" stop-opacity="0" />
+                                </radialGradient>
+                                <linearGradient id="grad-galaxy-arm" x1="32" y1="0" x2="32" y2="64"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#E0AAFF" />
+                                    <stop offset="1" stop-color="#7B2CBF" />
+                                </linearGradient>
+                            </defs>
+                            <g class="galaxy-arms">
+                                <path d="M32 32C32 32 48 24 56 32C64 40 56 56 32 56C8 56 0 40 8 32C16 24 32 32 32 32Z"
+                                    stroke="url(#grad-galaxy-arm)" stroke-width="1.5" stroke-linecap="round"
+                                    opacity="0.6" />
+                                <path d="M32 32C32 32 16 40 8 32C0 24 8 8 32 8C56 8 64 24 56 32C48 40 32 32 32 32Z"
+                                    stroke="url(#grad-galaxy-arm)" stroke-width="1.5" stroke-linecap="round"
+                                    opacity="0.8" />
+                            </g>
+                            <circle class="galaxy-core" cx="32" cy="32" r="8" fill="url(#grad-galaxy-core)" />
+                            <circle class="galaxy-planet" cx="32" cy="32" r="3" fill="#00F2FE" />
+                            <g class="galaxy-stars">
+                                <circle cx="12" cy="12" r="1" fill="#FFF" opacity="0.8" />
+                                <circle cx="52" cy="52" r="1.5" fill="#FFF" opacity="0.6" />
+                                <circle cx="56" cy="16" r="1" fill="#FFF" opacity="0.7" />
+                                <circle cx="8" cy="48" r="1" fill="#FFF" opacity="0.5" />
+                            </g>
+                        </svg>
+                    </div>
                     <h3>Transit Insights</h3>
                     <p>Stay ahead of the stars with real-time planetary transit tracking. Understand how current
                         celestial movements influence your life today.</p>
