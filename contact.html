@@ -11,17 +11,39 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Apply global styles from styles.css and override specific sections for consistency */
+        body {
+            background-color: var(--bg-deep, #050508);
+            color: var(--text-main, #FFFFFF);
+        }
+
         .contact-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: radial-gradient(circle at top right, #1a1a2e 0%, var(--bg-deep, #050508) 60%);
             padding: 120px 0 80px;
             text-align: center;
             color: white;
+            position: relative;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(157, 78, 221, 0.15) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .contact-hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 700;
+            background: linear-gradient(to right, #fff, #b0b0d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .contact-hero p {
@@ -29,11 +51,12 @@
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+            color: var(--text-muted, #B0B0D0);
         }
 
         .contact-content {
             padding: 80px 0;
-            background: #f8fafc;
+            background: var(--bg-deep, #050508);
         }
 
         .contact-grid {
@@ -46,16 +69,18 @@
         }
 
         .contact-info {
-            background: white;
+            background: var(--bg-card, rgba(20, 20, 35, 0.6));
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
         }
 
         .contact-info h2 {
             font-size: 2rem;
             margin-bottom: 30px;
-            color: #333;
+            color: var(--text-main, #FFFFFF);
         }
 
         .contact-item {
@@ -63,50 +88,56 @@
             align-items: center;
             margin-bottom: 25px;
             padding: 20px;
-            background: #f8fafc;
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 10px;
             transition: transform 0.3s ease;
+            border: 1px solid var(--border-light, rgba(255, 255, 255, 0.05));
         }
 
         .contact-item:hover {
             transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary, #9D4EDD);
         }
 
         .contact-icon {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: rgba(157, 78, 221, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 20px;
-            color: white;
+            color: var(--primary, #9D4EDD);
             font-size: 1.2rem;
+            border: 1px solid rgba(157, 78, 221, 0.2);
         }
 
         .contact-details h3 {
             margin: 0 0 5px 0;
-            color: #333;
+            color: var(--text-main, #FFFFFF);
             font-size: 1.1rem;
         }
 
         .contact-details p {
             margin: 0;
-            color: #666;
+            color: var(--text-muted, #B0B0D0);
         }
 
         .contact-form {
-            background: white;
+            background: var(--bg-card, rgba(20, 20, 35, 0.6));
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
         }
 
         .contact-form h2 {
             font-size: 2rem;
             margin-bottom: 30px;
-            color: #333;
+            color: var(--text-main, #FFFFFF);
         }
 
         .form-group {
@@ -116,7 +147,7 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #333;
+            color: var(--text-main, #FFFFFF);
             font-weight: 500;
         }
 
@@ -125,18 +156,21 @@
         .form-group textarea {
             width: 100%;
             padding: 15px;
-            border: 2px solid #e2e8f0;
+            border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
             border-radius: 10px;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
             box-sizing: border-box;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
         }
 
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--primary, #9D4EDD);
+            box-shadow: 0 0 15px rgba(157, 78, 221, 0.2);
         }
 
         .form-group textarea {
@@ -145,7 +179,7 @@
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: var(--primary, #9D4EDD);
             color: white;
             padding: 15px 40px;
             border: none;
@@ -153,18 +187,21 @@
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             width: 100%;
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 0 30px rgba(157, 78, 221, 0.6);
+            background: var(--primary-glow, #C77DFF);
         }
 
         .faq-section {
             padding: 80px 0;
-            background: white;
+            background: var(--bg-dark, #0B0B15);
+            border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
         }
 
         .faq-container {
@@ -177,7 +214,7 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, var(--secondary, #E0AAFF) 0%, var(--primary, #9D4EDD) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -185,40 +222,43 @@
 
         .faq-item {
             margin-bottom: 20px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
             border-radius: 10px;
             overflow: hidden;
+            background: var(--bg-card, rgba(20, 20, 35, 0.6));
         }
 
         .faq-question {
-            background: #f8fafc;
+            background: rgba(255, 255, 255, 0.03);
             padding: 20px;
             cursor: pointer;
             font-weight: 600;
-            color: #333;
+            color: var(--text-main, #FFFFFF);
             transition: background-color 0.3s ease;
         }
 
         .faq-question:hover {
-            background: #e2e8f0;
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .faq-answer {
             padding: 20px;
-            color: #666;
+            color: var(--text-muted, #B0B0D0);
             line-height: 1.6;
+            border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.05));
         }
 
         .business-hours {
-            background: #f0f9ff;
+            background: rgba(157, 78, 221, 0.05);
             padding: 20px;
             border-radius: 10px;
             margin: 20px 0;
+            border: 1px solid rgba(157, 78, 221, 0.1);
         }
 
         .business-hours h4 {
             margin: 0 0 15px 0;
-            color: #333;
+            color: var(--text-main, #FFFFFF);
         }
 
         .hours-list {
@@ -231,7 +271,8 @@
             display: flex;
             justify-content: space-between;
             padding: 5px 0;
-            border-bottom: 1px solid #e0f2fe;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted, #B0B0D0);
         }
 
         .hours-list li:last-child {
@@ -252,6 +293,12 @@
             .contact-form {
                 padding: 30px 20px;
             }
+        }
+
+        /* Override footer background to match main theme */
+        .footer {
+            background: #050508;
+            border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
         }
     </style>
 </head>

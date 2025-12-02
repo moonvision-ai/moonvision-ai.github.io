@@ -10,17 +10,39 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Apply global styles from styles.css and override specific sections for consistency */
+        body {
+            background-color: var(--bg-deep, #050508);
+            color: var(--text-main, #FFFFFF);
+        }
+
         .support-hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: radial-gradient(circle at top right, #1a1a2e 0%, var(--bg-deep, #050508) 60%);
             padding: 120px 0 80px;
             text-align: center;
             color: white;
+            position: relative;
+        }
+
+        .support-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(157, 78, 221, 0.15) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .support-hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 700;
+            background: linear-gradient(to right, #fff, #b0b0d0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .support-hero p {
@@ -28,11 +50,13 @@
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
+            color: var(--text-muted, #B0B0D0);
         }
 
         .search-section {
             padding: 60px 0;
-            background: #f8fafc;
+            background: var(--bg-dark, #0B0B15);
+            border-bottom: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
         }
 
         .search-container {
@@ -49,16 +73,20 @@
         .search-box input {
             width: 100%;
             padding: 20px 60px 20px 20px;
-            border: 2px solid #e2e8f0;
+            border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
             border-radius: 50px;
             font-size: 1.1rem;
             box-sizing: border-box;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            backdrop-filter: blur(10px);
         }
 
         .search-box input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--primary, #9D4EDD);
+            box-shadow: 0 0 15px rgba(157, 78, 221, 0.2);
         }
 
         .search-icon {
@@ -66,7 +94,7 @@
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            color: #667eea;
+            color: var(--primary, #9D4EDD);
             font-size: 1.2rem;
         }
 
@@ -78,21 +106,24 @@
         }
 
         .quick-link {
-            background: white;
+            background: var(--bg-card, rgba(20, 20, 35, 0.6));
             padding: 25px;
             border-radius: 15px;
             text-align: center;
             text-decoration: none;
-            color: #333;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: var(--text-main, #FFFFFF);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
         }
 
         .quick-link:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 25px rgba(157, 78, 221, 0.15);
             text-decoration: none;
-            color: #333;
+            color: var(--text-main, #FFFFFF);
+            border-color: var(--primary, #9D4EDD);
         }
 
         .quick-link-icon {
@@ -104,17 +135,18 @@
         .quick-link h3 {
             margin: 0 0 10px 0;
             font-size: 1.2rem;
+            color: var(--primary, #9D4EDD);
         }
 
         .quick-link p {
             margin: 0;
-            color: #666;
+            color: var(--text-muted, #B0B0D0);
             font-size: 0.9rem;
         }
 
         .support-content {
             padding: 80px 0;
-            background: white;
+            background: var(--bg-deep, #050508);
         }
 
         .support-grid {
@@ -127,17 +159,18 @@
         }
 
         .support-sidebar {
-            background: #f8fafc;
+            background: var(--bg-dark, #0B0B15);
             padding: 30px;
             border-radius: 15px;
             height: fit-content;
             position: sticky;
             top: 100px;
+            border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
         }
 
         .support-sidebar h3 {
             margin: 0 0 20px 0;
-            color: #333;
+            color: var(--text-main, #FFFFFF);
         }
 
         .sidebar-menu {
@@ -153,7 +186,7 @@
         .sidebar-menu a {
             display: block;
             padding: 12px 15px;
-            color: #666;
+            color: var(--text-muted, #B0B0D0);
             text-decoration: none;
             border-radius: 8px;
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -161,13 +194,14 @@
 
         .sidebar-menu a:hover,
         .sidebar-menu a.active {
-            background: #667eea;
-            color: white;
+            background: rgba(157, 78, 221, 0.2);
+            color: var(--primary-glow, #C77DFF);
             text-decoration: none;
+            border: 1px solid rgba(157, 78, 221, 0.3);
         }
 
         .support-main {
-            background: white;
+            background: transparent;
         }
 
         .support-section {
@@ -182,37 +216,53 @@
         .support-section h2 {
             font-size: 2rem;
             margin-bottom: 30px;
-            color: #333;
+            color: var(--text-main, #FFFFFF);
+            background: linear-gradient(135deg, var(--secondary, #E0AAFF) 0%, var(--primary, #9D4EDD) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .help-article {
             margin-bottom: 40px;
             padding: 30px;
-            background: #f8fafc;
+            background: var(--bg-card, rgba(20, 20, 35, 0.6));
             border-radius: 15px;
+            border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(10px);
         }
 
         .help-article h3 {
             margin: 0 0 15px 0;
-            color: #333;
+            color: var(--primary-glow, #C77DFF);
             font-size: 1.3rem;
         }
 
+        .help-article h4 {
+            color: var(--text-main, #FFFFFF);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
         .help-article p {
-            color: #666;
+            color: var(--text-muted, #B0B0D0);
             line-height: 1.6;
             margin-bottom: 15px;
         }
 
         .help-article ol,
         .help-article ul {
-            color: #666;
+            color: var(--text-muted, #B0B0D0);
             line-height: 1.6;
             padding-left: 20px;
         }
 
         .help-article li {
             margin-bottom: 8px;
+        }
+
+        .help-article strong {
+            color: var(--text-main, #FFFFFF);
         }
 
         .step-list {
@@ -231,7 +281,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            background: #667eea;
+            background: var(--primary, #9D4EDD);
             color: white;
             width: 25px;
             height: 25px;
@@ -241,22 +291,23 @@
             justify-content: center;
             font-size: 0.8rem;
             font-weight: bold;
+            box-shadow: 0 0 10px rgba(157, 78, 221, 0.4);
         }
 
         .troubleshooting-item {
-            background: white;
-            border: 1px solid #e2e8f0;
+            background: var(--bg-card, rgba(20, 20, 35, 0.6));
+            border: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
             border-radius: 10px;
             margin-bottom: 20px;
             overflow: hidden;
         }
 
         .troubleshooting-header {
-            background: #f8fafc;
+            background: rgba(255, 255, 255, 0.03);
             padding: 20px;
             cursor: pointer;
             font-weight: 600;
-            color: #333;
+            color: var(--text-main, #FFFFFF);
             transition: background-color 0.3s ease;
             display: flex;
             justify-content: space-between;
@@ -264,51 +315,59 @@
         }
 
         .troubleshooting-header:hover {
-            background: #e2e8f0;
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .troubleshooting-content {
             padding: 20px;
             display: none;
-            color: #666;
+            color: var(--text-muted, #B0B0D0);
             line-height: 1.6;
+            border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.05));
         }
 
         .contact-support {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.2) 0%, rgba(100, 50, 150, 0.2) 100%);
             color: white;
             padding: 40px;
             border-radius: 20px;
             text-align: center;
             margin-top: 60px;
+            border: 1px solid var(--primary, #9D4EDD);
+            box-shadow: 0 0 30px rgba(157, 78, 221, 0.15);
         }
 
         .contact-support h3 {
             margin: 0 0 15px 0;
             font-size: 1.5rem;
+            color: var(--text-main, #FFFFFF);
         }
 
         .contact-support p {
             margin: 0 0 25px 0;
             opacity: 0.9;
+            color: var(--text-muted, #B0B0D0);
         }
 
         .contact-btn {
-            background: white;
-            color: #667eea;
+            background: var(--primary, #9D4EDD);
+            color: white;
             padding: 15px 30px;
             border: none;
             border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
             display: inline-block;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
         }
 
         .contact-btn:hover {
             transform: translateY(-2px);
             text-decoration: none;
-            color: #667eea;
+            background: var(--primary-glow, #C77DFF);
+            color: white;
+            box-shadow: 0 0 30px rgba(157, 78, 221, 0.6);
         }
 
         @keyframes fadeIn {
@@ -340,6 +399,12 @@
             .quick-links {
                 grid-template-columns: 1fr;
             }
+        }
+
+        /* Override footer background to match main theme */
+        .footer {
+            background: #050508;
+            border-top: 1px solid var(--border-light, rgba(255, 255, 255, 0.1));
         }
     </style>
 </head>
